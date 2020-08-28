@@ -1,3 +1,14 @@
 body {
-	background: #222;
+	background-image: url("../img/973578.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	text-align: center;
+	font-family: 'Russo One', sans-serif;
+
+}
+
+pre {
+	font-family: 'Russo One', sans-serif;
+
 }
