@@ -1,76 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milos Milicevic — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<h1>Only my railgun</h1>
-	<pre>
-Hanate! 
-Kokoro ni kizanda yume
-wo Mirai sae okizari ni shite
-Genkai nado shiranai Imi nai!
-Kono chikara ga hikari chirasu
-Sono saki ni haruka na Omoi wo
-Aruite kita Kono michi
-wo Furikaeru koto shika
-Dekinai nara…Ima koko
-de subete wo kowaseru
-Kurayami ni ochiru machinami Hito
-ha dokomade tachimukaeru no?
-Kasoku suru sono itami kara
-Dare ka wo kitto mamoreru yo
-Looking!
-The blitz loop this
-planet to search way.
-Only my RAILGUN can shoot it. Ima sugu
-Karadajuu wo Hikari no hayasa de
-Kakemegutta tashika na yokan
-Tsukame! Nozomu mono nara nokosazu
-Kagayakeru jibunrashisa de
-Shinjiteru yo Ano hi no chikai wo
-Kono hitomi ni hikaru namida
-Sore sae mo tsuyosa ni naru kara
-Tachidomaru to Sukoshi
-dake Kanjiru Setsunasa ni
-Tomadou koto Nai nante
-Uso ha tsukanai yo
-Sora ni mau KOIN ga egaku
-Houbutsusen ga kimeru unmei
-Uchidashita kotae ga kyou mo
-Watashi no mune wo Kakemeguru
-Sparkling!
-The shiny lights awake true desire.
-Only my RAILGUN can shoot it. Kanarazu
-Tsuranuiteku To madou koto naku
-Kizutsuite mo Hashiritsudzukeru
-Nerae! Rin to kirameku shisen
-ha kurui naku yami wo kirisaku
-Mayoi nante Fukitobaseba ii
-Kono kokoro ga sakebu kagiri
-Dare hitori jama nado sasenai
-Hakanaku mau Musuu no negai ha
-Kono ryoute ni Tsumotte yuku
-Kirisaku yami ni Miete kuru no ha
-Omoku fukaku setsunai kioku
-Iroaseteku Genjitsu ni yureru
-Zetsubou ni ha Maketakunai
-Watashi ga ima Watashi dearu koto
-Mune wo hatte Subete hokoreru!
-Looking!
-The blitz loop this
-planet to search way.
-Only my RAILGUN can shoot it. Ima sugu
-Karadajuu wo Hikari no hayasa de
-Kakemegutta tashika na yokan
-Hanate! Kokoro ni kizanda yume
-wo Mirai sae okizari ni shite
-Genkai nado shiranai Imi nai!
-Kono chikara ga hikari chirasu
-Sono saki ni haruka na Omoi wo
-	</pre>
+
+  <!-- Background canvas for particle effect -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo">milos-mkv</span>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="https://github.com/milos-mkv" target="_blank" class="btn-outline">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Available for collaboration</div>
+      <h1 class="hero-title">
+        Milos<br>
+        <span class="gradient-text">Milicevic</span>
+      </h1>
+      <p class="hero-sub">
+        Software developer passionate about <strong>game engines</strong>,
+        <strong>IDE tooling</strong>, and <strong>graphics programming</strong>.
+        Building things from scratch.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="https://github.com/milos-mkv" target="_blank" class="btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub Profile
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">8+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">34</span>
+          <span class="stat-label">Stars</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Languages</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-window">
+        <div class="code-title-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-filename">main.lua</span>
+        </div>
+        <pre class="code-body"><span class="c-keyword">function</span> <span class="c-fn">init</span>()
+  <span class="c-keyword">local</span> dev <span class="c-op">=</span> {
+    name  <span class="c-op">=</span> <span class="c-str">"Milos Milicevic"</span>,
+    loves <span class="c-op">=</span> {
+      <span class="c-str">"Game Engines"</span>,
+      <span class="c-str">"IDE Tooling"</span>,
+      <span class="c-str">"OpenGL"</span>,
+      <span class="c-str">"Low-level code"</span>,
+    },
+  }
+  <span class="c-keyword">return</span> dev
+<span class="c-keyword">end</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">// open source</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-sub">A collection of personal projects spanning game development, compilers, and developer tooling.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- MiLua — featured -->
+        <article class="card card-featured">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <div class="card-badges">
+              <span class="badge badge-featured">⭐ 34 stars</span>
+              <span class="badge">Vala</span>
+            </div>
+          </div>
+          <h3 class="card-title">MiLua</h3>
+          <p class="card-desc">Lightweight IDE for the Lua programming language built with GTK4 and Adwaita. Features syntax highlighting, project management, and a clean modern interface.</p>
+          <div class="card-tags">
+            <span class="tag">GTK4</span>
+            <span class="tag">Adwaita</span>
+            <span class="tag">Lua</span>
+            <span class="tag">Vala</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://github.com/milos-mkv/MiLua" target="_blank" class="card-link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Katia Game Engine -->
+        <article class="card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div class="card-badges"><span class="badge">Java</span></div>
+          </div>
+          <h3 class="card-title">Katia Game Engine</h3>
+          <p class="card-desc">A simple 2D game engine written in Java with OpenGL rendering. Designed for learning and experimentation with game development fundamentals.</p>
+          <div class="card-tags">
+            <span class="tag">Java</span>
+            <span class="tag">OpenGL</span>
+            <span class="tag">2D Engine</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://github.com/milos-mkv/Katia-Game-Engine" target="_blank" class="card-link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Ghoul Slayer -->
+        <article class="card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+              </svg>
+            </div>
+            <div class="card-badges"><span class="badge">Java</span></div>
+          </div>
+          <h3 class="card-title">Ghoul Slayer</h3>
+          <p class="card-desc">3D first-person shooter built with Java LibGDX. Features real-time 3D rendering, enemy AI, and fast-paced gameplay mechanics.</p>
+          <div class="card-tags">
+            <span class="tag">Java</span>
+            <span class="tag">LibGDX</span>
+            <span class="tag">3D</span>
+            <span class="tag">FPS</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://github.com/milos-mkv/Ghoul-Slayer" target="_blank" class="card-link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Mini-Sharp -->
+        <article class="card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/>
+              </svg>
+            </div>
+            <div class="card-badges"><span class="badge">C#</span></div>
+          </div>
+          <h3 class="card-title">Mini-Sharp</h3>
+          <p class="card-desc">A tiny reflection-powered scripting language for .NET. Implements a compiler and interpreter with dynamic type resolution via C# reflection.</p>
+          <div class="card-tags">
+            <span class="tag">C#</span>
+            <span class="tag">Compiler</span>
+            <span class="tag">.NET</span>
+            <span class="tag">Scripting</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://github.com/milos-mkv/Mini-Sharp" target="_blank" class="card-link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- FTN-16-2017 -->
+        <article class="card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <div class="card-badges"><span class="badge">Java</span></div>
+          </div>
+          <h3 class="card-title">FTN-16-2017</h3>
+          <p class="card-desc">Computer graphics coursework: 3D rendering with OpenGL and Dear ImGui. Covers transformations, shading, lighting models, and real-time 3D scenes.</p>
+          <div class="card-tags">
+            <span class="tag">Java</span>
+            <span class="tag">OpenGL</span>
+            <span class="tag">ImGui</span>
+            <span class="tag">3D Graphics</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://github.com/milos-mkv/FTN-16-2017" target="_blank" class="card-link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Hack IDE -->
+        <article class="card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
+            <div class="card-badges"><span class="badge">Python</span></div>
+          </div>
+          <h3 class="card-title">Hack IDE</h3>
+          <p class="card-desc">Integrated development environment for the Hack programming language. Built with Python, featuring syntax highlighting and code execution support.</p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">IDE</span>
+            <span class="tag">Hack</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://github.com/milos-mkv/Hack-IDE" target="_blank" class="card-link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Misaka Tetris -->
+        <article class="card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+              </svg>
+            </div>
+            <div class="card-badges"><span class="badge">Python</span></div>
+          </div>
+          <h3 class="card-title">Misaka Tetris</h3>
+          <p class="card-desc">Classic Tetris game built with Python and Pygame. Clean implementation of the beloved puzzle game with smooth controls and score tracking.</p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pygame</span>
+            <span class="tag">Game</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://github.com/milos-mkv/Misaka-Tetris" target="_blank" class="card-link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Misaka Neural Network -->
+        <article class="card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="12" y1="7" x2="5" y2="17"/><line x1="12" y1="7" x2="19" y2="17"/><line x1="5" y1="19" x2="19" y2="19"/>
+              </svg>
+            </div>
+            <div class="card-badges"><span class="badge">C++</span></div>
+          </div>
+          <h3 class="card-title">Misaka Neural Network</h3>
+          <p class="card-desc">Single-header C++ neural network library. Lightweight, dependency-free implementation for experimenting with machine learning fundamentals in C++.</p>
+          <div class="card-tags">
+            <span class="tag">C++</span>
+            <span class="tag">Neural Network</span>
+            <span class="tag">Header-only</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://github.com/milos-mkv/Misaka-Neural-Network" target="_blank" class="card-link">
+              View on GitHub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-name">milos-mkv</span>
+      <a href="https://github.com/milos-mkv" target="_blank" class="footer-link">github.com/milos-mkv</a>
+    </div>
+  </footer>
+
+  <script src="js/bg.js"></script>
 </body>
 </html>
