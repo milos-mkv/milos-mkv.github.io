@@ -67,8 +67,8 @@
   ];
 
   const blocks = [];
-  const BLOCK_COUNT = 10;
-  const BLOCK_PX = 8;
+  const BLOCK_COUNT = 28;
+  const BLOCK_PX = 10;
 
   function makeBlock() {
     const shape = pick(BLOCK_SHAPES);
@@ -77,11 +77,11 @@
       y:     rand(-200, H + 200),
       shape,
       color: pick(COLORS),
-      alpha: rand(0.04, 0.12),
-      vy:    rand(0.15, 0.45),
-      vx:    rand(-0.1, 0.1),
-      rot:   0,
-      rotSpeed: rand(-0.003, 0.003),
+      alpha: rand(0.18, 0.45),
+      vy:    rand(0.5, 1.4),
+      vx:    rand(-0.2, 0.2),
+      rot:   rand(0, Math.PI * 2),
+      rotSpeed: rand(-0.008, 0.008),
     };
   }
 
@@ -158,14 +158,25 @@
     /* Floating blocks */
     for (const b of blocks) {
       ctx.save();
-      ctx.translate(snap(b.x), snap(b.y));
+      ctx.translate(b.x, b.y);
       ctx.rotate(b.rot);
       ctx.globalAlpha = b.alpha;
-      ctx.fillStyle = b.color;
       for (let row = 0; row < b.shape.length; row++) {
         for (let col = 0; col < b.shape[row].length; col++) {
           if (b.shape[row][col]) {
-            ctx.fillRect(col * BLOCK_PX, row * BLOCK_PX, BLOCK_PX - 1, BLOCK_PX - 1);
+            const bx = col * BLOCK_PX;
+            const by = row * BLOCK_PX;
+            // fill
+            ctx.fillStyle = b.color;
+            ctx.fillRect(bx, by, BLOCK_PX - 1, BLOCK_PX - 1);
+            // highlight top/left edge
+            ctx.fillStyle = 'rgba(255,255,255,0.35)';
+            ctx.fillRect(bx, by, BLOCK_PX - 1, 2);
+            ctx.fillRect(bx, by, 2, BLOCK_PX - 1);
+            // shadow bottom/right edge
+            ctx.fillStyle = 'rgba(0,0,0,0.4)';
+            ctx.fillRect(bx, by + BLOCK_PX - 3, BLOCK_PX - 1, 2);
+            ctx.fillRect(bx + BLOCK_PX - 3, by, 2, BLOCK_PX - 1);
           }
         }
       }
