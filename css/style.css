@@ -833,25 +833,88 @@ body::before {
   color: var(--dark);
 }
 
-/* ── Work History / Experience ── */
+/* ── Work History / Timeline ── */
 .experience {
-  max-width: 900px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 0 32px 100px;
 }
 
+/* The outer wrapper that holds the vertical line */
 .exp-list {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0;
+  padding-left: 48px;
 }
 
+/* Vertical pixel line */
+.exp-list::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--panel) 0px,
+    var(--panel) 8px,
+    transparent 8px,
+    transparent 12px
+  );
+}
+
+/* Each timeline row = node + card */
 .exp-entry {
-  padding: 20px 24px;
   position: relative;
+  padding: 0 0 32px 20px;
 }
 
-.exp-entry.exp-current {
+/* Pixel square node on the line */
+.exp-entry::before {
+  content: '';
+  position: absolute;
+  left: -37px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background: var(--panel);
+  border: 3px solid var(--border);
+  image-rendering: pixelated;
+}
+
+/* Horizontal connector from node to card */
+.exp-entry::after {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 25px;
+  width: 24px;
+  height: 3px;
+  background: var(--panel);
+}
+
+/* Active/current job — green glowing node */
+.exp-entry.exp-current::before {
+  border-color: var(--green);
+  background: var(--green);
+  box-shadow: 0 0 0 3px var(--dark), 0 0 0 6px rgba(0,228,54,.3);
+  animation: node-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes node-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px var(--dark), 0 0 0 6px rgba(0,228,54,.3); }
+  50%       { box-shadow: 0 0 0 3px var(--dark), 0 0 0 10px rgba(0,228,54,.5); }
+}
+
+/* The px-win card inside each entry */
+.exp-card {
+  padding: 18px 22px;
+}
+
+.exp-entry.exp-current .exp-card {
   border-color: var(--green);
   box-shadow: 0 0 0 4px var(--green), 0 0 0 8px var(--dark), inset 4px 4px 0 rgba(255,255,255,.08);
 }
@@ -931,6 +994,10 @@ body::before {
 .etag-orange{ color: var(--orange); border-color: var(--orange); }
 
 @media (max-width: 700px) {
+  .exp-list { padding-left: 32px; }
+  .exp-entry::before { left: -21px; }
+  .exp-entry::after  { left: -9px; width: 10px; }
+  .exp-list::before  { left: 7px; }
   .exp-header { flex-direction: column; }
   .exp-right  { align-items: flex-start; }
 }
